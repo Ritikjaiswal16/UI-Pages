@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Demo First Page</title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            jQuery(document).ready(function(){
+                console.log("sgds");
+            $("#btn1").click(function(){
+                console.log("sgds");
+                var url="http://10.85.26.103/SDSite/EmployeesData.JSON";
+               $.get({url:url,
+                dataType:'json',
+                success: function(content){
+                    console.log(content);
+                    dis(content);
+                },
+                error: function(err){
+                    $("#div1").text("Wrong URL");
+                }
+               });
+                
+        });
+    });
+            function dis(ls){
+                
+                var msg="<table>";
+                    msg=msg+"<tr><th>ID</th><th>Name</th><th>Designation</th><th>Salary</th></tr>";
+                    for(var i=0;i<ls.length;i++){
+                        msg=msg+"<tr><td>"+ls[i].empid+"</td>"+"<td>"+ls[i].empname+"</td>"+"<td>"+ls[i].empdesignation+"</td>"+"<td>"+ls[i].empsalary+"</td></tr>";
+                    };
+                    msg=msg+"</table>";
+                document.getElementById("div1").innerHTML=msg;
+                console.log(msg);
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="Heading1"></h1>
+        <br>
+        <br>
+        <input type="button" id="btn1" value="Read content" >
+        <br><br>
+        <div id="div1">
+
+        </div>
+    </body>
+</html>

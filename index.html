@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Index of Dassault System</title>
+    </head>
+    <style>
+        body{
+            background-color: cyan;
+        }
+        .main{
+            background-color: pink;
+            width: 500px;
+            height: 500px;
+            float: left;
+            margin-left:30% ;
+            margin-top: 20%;
+            padding: 40px;
+            border-radius: 80px;
+        }
+        .login{
+            font-size: larger;
+            color: white;
+            text-shadow: 2px 2px blue;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+        
+    </style>
+    <script src="index.js"></script>
+    <body >
+        <div class="main">
+            <div class="login">
+                <h1>Welcome</h1>
+            </div>
+            <div>
+                <input type="lable" value="Content:  " >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="txt" id="txt" placeholder="Enter Content">
+                <input type="button" value="Display Content" id="button1" onclick="DisplayContent(document.getElementById('txt').value)">
+                <br>
+                <br>
+                <div id="result">
+                    <input type="text" id="res">
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

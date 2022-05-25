@@ -1,0 +1,67 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Index of Dassault System</title>
+    </head>
+    <style>
+        body{
+            background-color: cyan;
+        }
+        .main{
+            background-color: pink;
+            width: 500px;
+            height: 500px;
+            float: left;
+            margin-left:30% ;
+            margin-top: 20%;
+            padding: 40px;
+            border-radius: 80px;
+        }
+        .login{
+            font-size: larger;
+            color: white;
+            text-shadow: 2px 2px blue;
+            text-align: center;
+            letter-spacing: 5px;
+        }
+        
+    </style>
+    <script src="calculator.js"></script>
+    <body >
+        <div class="main">
+            <div class="login">
+                <h1>Welcome</h1>
+            </div>
+            <div>
+                <input type="text" id="content" >
+            </div>
+            <div>
+                <input type="button" value="1" id="b1" onclick="DisplayContent('1')">
+                <input type="button" value="2" id="b2" onclick="DisplayContent('2')">
+                <input type="button" value="3" id="b3" onclick="DisplayContent('3')">
+                <input type="button" value="+" id="b+" onclick="DisplayContent('+')">
+            </div>
+            <div>
+                <input type="button" value="4" id="b4" onclick="DisplayContent('4')">
+                <input type="button" value="5" id="b5" onclick="DisplayContent('5')">
+                <input type="button" value="6" id="b6" onclick="DisplayContent('6')">
+                <input type="button" value="-" id="b-" onclick="DisplayContent('-')">
+            </div>
+            <div>
+                <input type="button" value="7" id="b7" onclick="DisplayContent('7')">
+                <input type="button" value="8" id="b8" onclick="DisplayContent('8')">
+                <input type="button" value="9" id="b9" onclick="DisplayContent('9')">
+                <input type="button" value="*" id="b*" onclick="DisplayContent('*')">
+            </div>
+            <div>
+                <input type="button" value="0" id="b0" onclick="DisplayContent('0');">
+                <input type="button" value="." id="b." onclick="DisplayContent('.');">
+                <input type="button" value="=" id="b=" onclick="Cal(document.getElementById('content').value);">
+                <input type="button" value="/" id="b/" onclick="DisplayContent('/');">
+            </div>
+            </div>
+            <div id="hello"></div>
+        </div>
+    </body>
+
+</html>

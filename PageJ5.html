@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Demo First Page</title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            jQuery(document).ready(function(){
+                
+            $("#btn1").click(function(){
+               
+                var url="https://reqres.in/api/users";
+               $.get({url:url,
+                dataType:'json',
+                success: function(content){
+                    var con=content.data;
+                    console.log(con);
+                    dis(con);
+                },
+                error: function(err){
+                    $("#div1").text("Wrong URL");
+                }
+               });
+                
+        });
+    });
+            function dis(ls){
+                
+                var msg="<table>";
+                    msg=msg+"<tr><th>ID</th><th>Email</th><th>FirstName</th><th>lastName</th><th>Avatar</th></tr>";
+                    for(var i=0;i<ls.length;i++){
+                        msg=msg+"<tr><td>"+ls[i].id+"</td>"+"<td>"+ls[i].email+"</td>"+"<td>"+ls[i].first_name+"</td>"+"<td>"+ls[i].last_name+"</td><td><img src='"+ls[i].avatar+"'></td></tr>";
+                    };
+                    msg=msg+"</table>";
+                document.getElementById("div1").innerHTML=msg;
+                console.log(msg);
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="Heading1"></h1>
+        <br>
+        <br>
+        <input type="button" id="btn1" value="Read content" >
+        <br><br>
+        <div id="div1">
+
+        </div>
+    </body>
+</html>

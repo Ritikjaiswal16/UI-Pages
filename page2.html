@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome Again</title>
+</head>
+<body bgcolor="pink">
+    <form name="Form1" action="page3.html" method="get">
+        <table border="3" width="70%" height="100%">
+            <tr>
+                <th>Name</th>
+                <th>
+                    <input type="text" name="txt" placeholder="Enter your name">
+                </th>
+            </tr>
+            <tr>
+                <th>About you</th>
+                <th>
+                    <input type="textarea" name="txtbox" placeholder="Description" rows="8" cols="2">
+                </th>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <th>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                </th>
+            </tr>
+            <tr>
+                <th>hobbies</th>
+                <th>
+                    <input type="checkbox" name="hob" value="Cricket">Cricket
+                    <input type="checkbox" name="hob" value="Football">Football
+                </th>
+            </tr>
+            <tr>
+                <th>Qualification</th>
+                <th>
+                    <select name="select" id="select">
+                        <option name="A" value="10th pass">10th Pass</option>
+                        <option name="B" value="12th pass">12th pass</option>
+                        <option name="C" value="UG">UG</option>
+                    </select>
+                </th>
+            </tr>
+            <tr >
+                <th colspan="2">
+                    <input type="submit" name="save data" value="Save">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="reset" name="clear data" value="Clear">
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

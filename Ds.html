@@ -1,0 +1,126 @@
+<!--vehical name, fuel type, engine capacity, pic of that vehical-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vehicle Page</title>
+        <style>
+            #img1{
+                width: 500px;
+                height: 350px;
+                margin-top: 30px;
+                margin-left: 300px;
+            }
+            
+            #id1{
+                margin-top: 30px;
+                margin-left: 300px;
+                font-size: larger;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+        </style>
+        <script>
+            var ls=[{"VehName":"Toyota","FuelType":"Petrol","EngineCC":400,"Path":"Car1.jfif"},
+            {"VehName":"Tata","FuelType":"Deisel","EngineCC":350,"Path":"Car2.jfif"},
+            {"VehName":"Audio","FuelType":"Petrol","EngineCC":550,"Path":"Car3.jfif"},
+            {"VehName":"Maruti","FuelType":"Deisel","EngineCC":500,"Path":"Car4.jfif"},
+            {"VehName":"Jaguar","FuelType":"Petrol","EngineCC":250,"Path":"Car5.jfif"} ];
+            var x=0;
+            function next(){
+                if(x==4){
+                    x=0;
+                }
+                else{
+                    x+=1;
+                }
+            }
+            function previous(){
+                if(x==0){
+                    x=4;
+                }
+                else{
+                    x-=1;
+                }
+            }
+            function change(e){
+                var f=document.getElementById("sort2").checked;
+                console.log(f);
+                if(document.getElementById("sort1").checked){
+                ls.sort((e1,e2)=>{
+                        return e1.EngineCC-e2.EngineCC;
+                });
+                }
+                else if(document.getElementById("sort2").checked){
+                    console.log("BAC");
+                    ls.sort((e1,e2)=>{
+                        /*
+                        if(e1.VehName>e2.VehName){
+                            return 1;
+                        }
+                        else if(e1.VehName<e2.VehName){
+                            return -1;
+                        }
+                            return 0;
+                        */
+                       //console.log(e1.VehName.localeCompare(e2.VehName));
+                            return (e1.VehName.localeCompare(e2.VehName));
+                                
+                        
+                        
+                    });
+                    console.log(JSON.stringify(ls));
+                }
+
+                if(e==-1){
+                    previous();
+                }   
+                else{
+                    next();
+                }
+            Print();
+            }
+            function Print(){
+                var im=document.getElementById("img1");
+                im.src=ls[x].Path;
+                var ds=document.getElementById("id1");
+                msg="<ul >";
+                msg=msg+"<li> Name: <b> "+ls[x].VehName+"</b></li><li> Fuel Type : <b> "+ls[x].FuelType+"</b> </li><li>Engine Capacity: <b> "+ls[x].EngineCC+"</li>";
+                ds.innerHTML=msg+"</ul>";
+                
+
+            }
+        </script>
+    </head>
+    <body >
+        <center><h1>Vehicle Store</h1></center>
+        <div >
+            <input type="radio" value="Engine" name="sort" id="sort1">Sort by CC
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" value="Name" name="sort" id="sort2">Sort by Name
+        </div>
+        <div >
+            <img id="img1"  src="Car0.png"><img>
+            <div id="id1">
+
+            </div>
+        </div>
+        <div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <input type="button"  value="Previous" name="pre" id="pre" onclick="change(-1);">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            <input type="button" value="Next" name="nxt" id="nxt" onclick="change(1);">
+        </div>
+    </body>
+</html> 

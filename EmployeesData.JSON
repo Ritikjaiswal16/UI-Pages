@@ -1,0 +1,6 @@
+[{"empid":101,"empname":"Chidanand","empdesignation":"Manager","empsalary":100000},
+    {"empid":102,"empname":"Mandar","empdesignation":"Developer","empsalary":23000},
+    {"empid":103,"empname":"Utkarsh","empdesignation":"Testor","empsalary":40000},
+    {"empid":104,"empname":"Biswa","empdesignation":"Analyst","empsalary":19000},
+    {"empid":105,"empname":"Alkesh","empdesignation":"UI","empsalary":75000}
+]

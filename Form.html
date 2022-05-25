@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Save(){
+            var arr=new Array();    /// array declared
+            if(JSON.parse(localStorage.getItem("PersonDetails"))!=undefined){
+            arr=JSON.parse(localStorage.getItem("Person"));
+            }
+            var PObject={
+                "Name":document.getElementById("Name").value,
+                "DOB":document.getElementById("DOB").value,
+                "Gender":document.getElementById("Gender").value,
+                "MStatus":document.getElementById("MStatus").value,
+                "Nationality":document.getElementById("Nationality").value,
+                "Email":document.getElementById("Email").value,
+                "PhNo":document.getElementById("PhNo").value,
+                "EduQuali":document.getElementById("EduQuali").value,
+                "Img":document.getElementById("Img").value,
+                
+            };
+            
+            arr.push(PObject);
+            localStorage.setItem("PersonDetails",JSON.stringify(arr));
+            document.getElementById("Name").value="";
+            document.getElementById("DOB").value="";
+            document.getElementById("Gender").value="";
+            document.getElementById("MStatus").value="";
+            document.getElementById("Nationality").focus();
+            document.getElementById("Email").value;
+            document.getElementById("PhNo").value;
+            document.getElementById("EduQuali").value;
+            document.getElementById("Img").value;
+                
+        }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

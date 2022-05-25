@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery intro</title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+           jQuery(document).ready(function(){
+               jQuery("h1").text("Welcome to Utkarsh's jQuery Page");
+               $("#btn2").click(()=>{
+                   $("h1").text("We have changed content of the h1 tag");
+               });
+               //$("button").click(()=>{
+                //alert("You clicked the button");
+               //});
+               $(".btn1").click(()=>{
+                   alert("Class chal raa hai");
+               });
+               $("#btn4").click(()=>{
+                   $("button").hide();
+               });
+           }) ;
+        </script>
+    </head>
+    <body>
+        <h1></h1>
+        <button type="button" value="Display" >Display</button>
+        <button type="button" value="Display" class="btn1" >Display</button>
+        <button type="button" value="Display" class="btn1" >Display</button>
+        <button id="btn2" value="Show">Show</button>
+        <button type="button" value="Hide" id="btn4" >Hide</button>
+    </body>
+</html>

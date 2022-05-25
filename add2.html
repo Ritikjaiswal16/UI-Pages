@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Data page
+        </title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            /*
+            $("document").ready(function(){
+                $("#btn1").click(()=>{
+                $.post(
+                    {
+                        url:"http://10.85.26.103:8080/add",
+                        data:"{'a':23,'b':45}",
+                        success:function(content){
+                            $("#id1").text(content)
+                        },
+                        error:function(err){
+                            $("#id1").text("Something went wrong")
+                        }
+                    }
+                );
+            });
+            })*/
+            $("document").ready(function(){
+                var msg="";
+                var pObject={"personid":'121',"personname":"bhavesh"};
+                $("#btn1").click(()=>{
+                $.ajax({
+                    url:"http://10.85.26.103:8080/person",
+                    method:"Post",
+                    dataType:'json',
+                    data:JSON.stringify(pObject),
+                    contentType:'application/json',
+                    success:function(content){
+                        msg=content;
+                        $("#id1").text(msg);
+                    },
+                    error:function(err){
+                        msg=err.responseText;
+                        $("#id1").text(msg);
+                    }
+                });
+            });
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>Data Page</h1>
+        </div>
+        <div>
+            <input type="button" value="displayData" id="btn1">
+        </div>
+        <div id="id1"></div>
+    </body>
+</html>

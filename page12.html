@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Element</title>
+        <style>
+            #hello{
+                border: 2px solid blue;
+            }
+        </style>
+        <script>
+            var i=2;
+            function addElement(){
+                var divObject=document.getElementById("hello");
+                var h2ele=document.createElement("h"+i);
+                if(i+1>6){
+                    i=2;
+                }
+                else{
+                    i+=1;
+                }
+                h2ele.innerText="This is new element";
+                h2ele.id="subheading";
+                divObject.appendChild(h2ele);
+            }
+            function addElement1(){
+                var h2ele=document.createElement("h"+i);
+                if(i+1>6){
+                    i=2;
+                }
+                else{
+                    i+=1;
+                }
+                h2ele.innerText="This is new element";
+                h2ele.id="subheading";
+                document.body.appendChild(h2ele);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Hello! Welcome</h1>
+        <input type="button" value="Add Element" onclick="addElement();">
+        <div id="hello">
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+#main{
+    height: auto;
+    width: auto;
+}
+#h1{
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: purple;
+    color: white;
+
+}
+#left{
+    background-color: aquamarine;
+    margin-left: 0px;
+    float: left;
+    width: 700px;
+    height: 800px;
+    border: 2px solid blue;
+}
+#right{
+    background-color: cadetblue;
+    margin-right: 0px;
+    width: 538px;
+    height: 800px;
+    float: right;
+    border: 2px solid red;
+}
+
+.pbox{
+    width: 600px;
+    height: 600px;
+    margin-left: 48px;
+    margin-top: 50px;
+    float: left;
+    border: 2px solid black;
+}
+.row{
+    height: 50px;
+}
+.H{
+    width: 60px;
+    height: 60px;
+    font-size: 40px;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    border: 2px solid green;
+    background-color: yellow;
+}

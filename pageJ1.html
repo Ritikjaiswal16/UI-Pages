@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery intro</title>
+        <style>
+            #box1,#box2{
+                width: 200px;
+                height: 200px;
+                border: 2px solid red;
+                background-color: blue;
+            }
+        </style>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            var x=1;
+           jQuery(document).ready(function(){
+            $("#btn1").click(()=>{
+                   $("h1").show();
+               });
+            $("#btn2").click(()=>{
+                   $("h1").hide(2000);
+               });
+            $("#btn3").click(()=>{
+                   $("h1").toggle();
+               });
+            $("#btn4").click(()=>{
+                $("#box1").slideUp();
+            });
+            $("#btn5").click(()=>{
+                $("#box1").slideDown(3000);
+            });   
+            $("#btn6").click(()=>{
+                $("#box1").slideToggle(5000);
+            });
+            $("#btn7").click(()=>{
+                $("#box2").fadeToggle();
+            });
+            $("#btn8").click(()=>{
+                $("#box2").fadeIn();
+            });   
+            $("#btn9").click(()=>{
+                $("#box2").fadeToggle(2000);
+            });
+           }) ;
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to Jquery </h1>
+        <button type="button" value="Hide" id="btn1" >Show</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" value="Hide" id="btn2" >Hide</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" value="Hide" id="btn3" >Toggle</button>
+        <br>
+        <br>
+        <div id="box1">
+
+        </div>
+        <br>
+        <button type="button" value="Hide" id="btn4" >SlideUp</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" value="Hide" id="btn5" >Slidedown</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" value="Hide" id="btn6" >SlideToggle</button>
+        <br>
+        <br>
+        <div id="box2">
+
+        </div>
+        <br>
+        <button type="button" value="Hide" id="btn7" >FadeIn</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" value="Hide" id="btn8" >Fadeout</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" value="Hide" id="btn9" >FadeToggle</button>
+    </body>
+</html>

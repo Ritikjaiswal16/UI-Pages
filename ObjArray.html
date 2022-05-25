@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My anonymous</title>
+        <script>
+            var ls=[{"PersonName":"Ranga","PersonAge":23,"PersonCity":"Duniya"},
+            {"PersonName":"Biswa","PersonAge":24,"PersonCity":"Jagatsinghpur"},
+            {"PersonName":"Jagat","PersonAge":25,"PersonCity":"singh"},
+            {"PersonName":"Singh","PersonAge":21,"PersonCity":"pur"},];
+            function got4(){
+                var x=document.getElementById("id1");
+                msg="<ol>";
+                ls.forEach((mydata)=>{msg=msg+"<li> Name: <b> "+mydata.PersonName+"</b> Age : <b> "+mydata.PersonAge+"</b> City: <b> "+mydata.PersonCity+"</li>";});
+                x.innerHTML=msg+"</ol>";
+            }
+        </script>
+    </head>
+    <body>
+      
+      <input type="button" name="btn1" id="btn1" value="Click here" onclick="got4();">
+    <div id="id1">
+        </div>
+    </body>
+</html>

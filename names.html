@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Data page
+        </title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            $("document").ready(function(){
+                $("#btn1").click(()=>{
+                $.get(
+                    {
+                        url:"http://10.85.26.103:8080/namelist",
+                        dataType:"json",
+                        success:function(content){
+                            
+                            ls=content;
+                            
+                            msg="<ul>";
+                                for(var i=0;i<ls.length;i++){
+                                    msg+="<li>"+ls[i]+"</li>";
+                                }
+                            msg+="</ul>";
+                            $("#id1").html(msg);
+                        },
+                        error:function(err){
+                            $("#id1").text("Something went wrong")
+                        }
+                    }
+                );
+            });
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>Name Page</h1>
+        </div>
+        <div>
+            <input type="button" value="displayData" id="btn1">
+        </div>
+        <div id="id1"></div>
+    </body>
+</html>

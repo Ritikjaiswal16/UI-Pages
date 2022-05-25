@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Get Image</title>
+        <style>
+            .greenbox{
+                width: 200px;
+                height: 200px;
+                border: 2px solid white;
+                background-color:green;
+            }
+            .yellowbox{
+                width: 200px;
+                height: 200px;
+                border: 2px solid white;
+                background-color: yellow;
+            }
+            .purplebox{
+                width: 200px;
+                height: 200px;
+                border: 2px solid purple;
+                background-color: purple;
+            }
+            .redbox{
+                width: 200px;
+                height: 200px;
+                border: 2px solid cyan;
+                background-color:red;
+            }
+        </style>
+        <script >
+            var x=0;
+            
+            function displayImage(){
+                
+                var list=["greenbox","yellowbox","purplebox","redbox"];
+                var str=document.getElementById("box");
+                str.className=list[x];
+                if(x<3){
+                    x+=1;
+                }
+                else{
+                    x=0;
+                }
+               
+               
+            }
+        </script>
+    </head>
+    <body bgcolor="lightblue">
+        <h1>The Image</h1>
+        <div class="redbox" id="box">
+
+        </div>
+            <input type="button" onclick="displayImage();" value="Change Color">
+        </div>
+    
+    </body>
+</html>

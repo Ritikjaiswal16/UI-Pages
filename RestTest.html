@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome Page</title>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            /*
+            function display(){
+                var url="http://localhost:8080/page1";
+                var httpObject=new XMLHttpRequest();
+                httpObject.open("get",url,true);
+                httpObject.send();
+                httpObject.onreadystatechange=function(){
+                    if(httpObject.readyState===4 && httpObject.status===200){
+                        
+                       document.getElementById("id1").innerText =httpObject.responseText;
+                    }
+                }
+            }*/
+
+            $("document").ready(function(){
+                
+                $("#btn1").click(()=>{
+                $.ajax({
+                    url:"http://localhost:8080/page2",
+                    dataType:"text",
+                    method:"get",
+                    success:function(data){
+                        $("#id1").text(data);
+                    },
+                    error:function(err){
+                        console.log("bbb"+eval(err));
+                    }
+                });
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="button" value="display" id="btn1" >
+        </div>
+        <div id="id1"></div>
+    </body>
+</html>

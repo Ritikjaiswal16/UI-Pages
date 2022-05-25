@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery intro</title>
+        <style>
+            #box1{
+                width: 200px;
+                height: 200px;
+                border: 2px solid red;
+               
+            }
+            .red{
+                background-color: red;
+            }
+            .blue{
+                background-color: blue;
+            }
+            .silver{
+                background-color: silver;
+            }
+            .black{
+                background-color: black;
+            }
+        </style>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+           jQuery(document).ready(function(){
+
+            $("#boxname").click(()=>{
+                console.log($("#boxname").val());
+                $("#box1").toggleClass($("#boxname").val());
+               });
+            //$("#remove").click(()=>{
+              //  
+            //});
+           }) ;
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to Jquery </h1>
+        <span>Select a Color:</span>
+        <select name="ColorSelector" id="boxname">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="silver">Silver</option>
+            <option value="black">Black</option>
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!--<button type="button" value="Remove" id="remove">Remove</button>-->
+        <br>
+        <br>
+        <div id="box1">
+
+        </div>
+        
+    </body>
+</html>

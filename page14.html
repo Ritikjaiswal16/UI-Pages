@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Demo Function</title>
+        <script>
+            function PrintMessage(ename){
+                alert("Name is : "+ename);
+            }
+            function GetMessageFromUser(myfun){
+                var ename=prompt("Enter your Name: ");
+                myfun(ename);
+            }
+            function CallMyFunction(funData){
+                funData();
+            }
+            function DemoFun1(){
+                CallMyFunction(function(){alert("This is another way to call function via callbacks");});
+                CallMyFunction(()=>{alert("I am now using arrow technique to call a funtion");});
+            }
+            function CallMyOtherFuntion(myval){
+                return myval*myval;
+            }
+            function DemoFun2(myval){
+                var msg="Square of " +myval+" is : "+CallMyOtherFuntion(myval);
+                alert(msg);
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Welcome Mandar</h1>
+        <br>
+        <input type="button" value="Display Data" onclick="GetMessageFromUser(PrintMessage);">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Print Data" onclick="DemoFun1();">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" value="Kill it" onclick="DemoFun2(15);">
+    </body>
+</html>

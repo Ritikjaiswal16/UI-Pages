@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Get Image</title>
+        <style>.main{
+            width: 300px;
+            height: 300px;
+            margin-top: 100px;
+            margin-left: 200px;
+            background-color: aqua;
+        }
+        .tb{
+            border: 2px solid black;
+        }    
+        </style>
+        <script src="table.js">
+        </script>
+    </head>
+    <body bgcolor="lightblue">
+        <div class="main">
+        <div>
+            Name:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="name" placeholder="Enter Name">
+        </div>
+        <div>
+            Age:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="age" placeholder="Enter Name">
+        </div>
+        <div>
+            City:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="city" placeholder="Enter Name">
+        </div>
+        <div>
+            Email:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" id="email" placeholder="Enter Name">
+        </div>
+        <div>
+            
+            <input type="button" value="Add" id="btn1" onclick="add();">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="Display" id="btn2" onclick="showtable();">
+
+        </div>
+        </div>
+        <div>
+            <table id="tab" class="tb">
+
+            </table>
+        </div>
+    </body>
+</html>

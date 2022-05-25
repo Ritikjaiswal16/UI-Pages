@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My anonymous</title>
+        <script>
+            var ls=["Jojo","hello","jai","Biswa"];
+            function Display(Name){
+                console.log("The name is : "+Name );
+            }
+            function got(){
+                for(var i=0;i<ls.length;i++){
+                    Display(ls[i]);
+                }
+            }
+            function got2(){
+                ls.forEach(function(myname){console.log("Here Name: "+myname);});
+            }
+            function got3(){
+                ls.forEach((mydata)=>{console.log("**. : "+mydata);});
+            }
+            function got4(){
+                var x=document.getElementById("id1");
+                msg="<ol>";
+                ls.forEach((mydata,index)=>{msg=msg+"<li> The name: <b> "+mydata+"</b> at "+index+" position of the array.</li>";});
+                x.innerHTML=msg+"</ol>";
+            }
+        </script>
+    </head>
+    <body>
+      <input type="button" name="btn1" id="btn1" value="Click here" onclick="got();">  
+      <input type="button" name="btn1" id="btn1" value="Click here" onclick="got2();"> 
+      <input type="button" name="btn1" id="btn1" value="Click here" onclick="got3();"> 
+      <input type="button" name="btn1" id="btn1" value="Click here" onclick="got4();">
+    <div id="id1">
+        </div>
+    </body>
+</html>

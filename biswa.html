@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome page</title>
+        <script>
+            function display(){
+                var url="http://10.85.26.103:8080/greet-user1";
+                var httpObject=new XMLHttpRequest();
+                httpObject.open("post",url,true);
+                httpObject.send();
+                console.log(httpObject.readyState+" "+httpObject.status);
+                httpObject.onreadystatechange=function(){
+                    if(httpObject.status===200 && httpObject.readyState===4){
+                    console.log(httpObject.response);
+                document.getElementById("id1").innerText= httpObject.responseText;
+                    }
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+        <input type="button" onclick="display();" value="Click here">
+    </div>
+        <div id="id1">
+
+        </div>
+    </body>
+</html>

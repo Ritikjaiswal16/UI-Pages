@@ -1,0 +1,42 @@
+<!--
+
+
+    ready state has value 0,1,2,3 and 4.
+    0- nothing has happened.
+    1- you hvae passed the required information
+    2- 
+
+
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Connection Page</title>
+        <script>
+            function   display(){
+                var httObject=new XMLHttpRequest();
+                var x=document.getElementById("id1");
+                var furl="http://127.0.0.1/SDSite/About.txt";
+                //var furl="http://10.85.16.87/UDSite/DassaultInfo_02ndMay2022.txt";
+                httObject.open("Get",furl);
+                httObject.send();
+                httObject.onreadystatechange=function(mycontent){
+                    if(httObject.readyState===4 && httObject.status===200){
+                        x.innerText=httObject.responseText;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>Prasanna's Page</h1>
+        </div>
+        <div>
+            <input type="button" value="Display" onclick="display();">
+        </div>
+        <div id="id1">
+
+        </div>
+    </body>
+</html>

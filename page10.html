@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title> My Demo</title>
+    <script>
+        function Save(){
+            var arr=new Array();    /// array declared
+            if(JSON.parse(localStorage.getItem("Person"))!=undefined){
+            arr=JSON.parse(localStorage.getItem("Person"));
+            }
+            var PObject={
+                "personName":document.getElementById("txtname").value,
+                "personAge":document.getElementById("txtage").value
+            };
+            
+            arr.push(PObject);
+            localStorage.setItem("Person",JSON.stringify(arr));
+            document.getElementById("txtname").value="";
+            document.getElementById("txtage").value="";
+            document.getElementById("txtname").focus();
+        }
+        function display(){
+            var arr=new Array();    /// array declared
+
+            if(JSON.parse(localStorage.getItem("Person"))!=undefined){
+                arr=JSON.parse(localStorage.getItem("Person"));
+                var tabData="<table border='1'><tr><th>Name</th><th>Age</th></tr>";
+                    for(var i=0;i<arr.length;i++){
+                        var PObject=arr[i];
+                        tabData+="<tr><td>"+PObject.personName+"</td><td>"+PObject.personAge+"</td></tr>";
+                    }
+                    tabData+="</table>";
+                var divObject=document.getElementById("resultdiv");
+                divObject.innerHTML=tabData;
+            }
+            else{
+                alert("No data Found");
+            }
+            
+        }
+    </script>
+    </head>
+    <body>
+        <h1 id="heading1">Welcome to Dassault Systems</h1>
+        <br>
+        <br>
+        <div id="inputdiv">
+            <!--<form name="form1" id="form1" method="get" onsubmit="SaveAndRenderData();">-->
+                <table border="1">
+                    <tr>
+                        <th>Enter Name</th>
+                        <td><input type="text" id="txtname" name="txtname" required autofocus minlength="3" maxlength="30"></td>
+                    </tr>
+                    <tr>
+                        <th>Enter Age</th>
+                        <td><input type="number" id="txtage" name="txtage" required autofocus min="21" max="60"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="align-items: center; text-align: center;">
+                            <input type="button" value="Save Data" id="btn1" name="btn1" onclick="Save();">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="reset" value="Clear Form" id="btn2" name="btn2">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" value="Display" id="btn2" name="btn2" onclick="display();">
+                        </td>
+                    </tr>
+                </table>
+            <!--</form>-->
+        </div>
+        <br>
+        <br>
+        <div id="resultdiv"></div>
+    </body>
+</html>

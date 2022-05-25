@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Demo First Page</title>
+        <style>
+            .id1{
+                width: 1020px;
+                height: 150px;
+                border:2px solid red;
+                background-color: chartreuse;
+            }
+            .jai{
+                width: 200px;
+                height: 150px;
+                border: 2px solid red;
+                float: left;
+                text-align: center;
+                background-color: aqua;
+            }
+        </style>
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+            jQuery(document).ready(function(){
+                
+            $("#btn1").click(function(){
+               
+                var url="https://reqres.in/api/users";
+               $.get({url:url,
+                dataType:'json',
+                success: function(content){
+                    var con=content.data;
+                    console.log(con);
+                    dis(con);
+                },
+                error: function(err){
+                    $("#div1").text("Wrong URL");
+                }
+               });
+                
+        });
+    });
+            function dis(ls){
+                
+                var msg="<div>";
+                    msg=msg+"<div class='id1'><div class='jai'>ID</div><div class='jai'>Email</div><div class='jai'>FirstName</div><div class='jai'>lastName</div><div class='jai'>Avatar</div></div>";
+                    for(var i=0;i<ls.length;i++){
+                        msg=msg+"<div class='id1'><div class='jai'>"+ls[i].id+"</div>"+"<div class='jai'>"+ls[i].email+"</div>"+"<div class='jai'>"+ls[i].first_name+"</div>"+"<div class='jai'>"+ls[i].last_name+"</div><div class='jai'><img src='"+ls[i].avatar+"'></div></div>";
+                    };
+                    msg=msg+"</div>";
+                document.getElementById("div1").innerHTML=msg;
+                console.log(msg);
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="Heading1"></h1>
+        <br>
+        <br>
+        <input type="button" id="btn1" value="Read content" >
+        <br><br>
+        <div id="div1">
+
+        </div>
+    </body>
+</html>
